@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .heart {
+            position: relative;
+            width: 100px;
+            height: 90px;
+        }
+        .heart::before, .heart::after {
+            position: absolute;
+            content: "";
+            top: 40px;
+            width: 52px;
+            height: 80px;
+            border-radius: 50px 50px 0 0;
+            background: red;
+        }
+        .heart::before {
+            left: 50px;
+            transform: rotate(-45deg);
+            transform-origin: 0 100%;
+        }
+        .heart::after {
+            left: 0;
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+        }
+        h1 {
+            position: absolute;
+            top: 100px;
+            text-align: center;
+            width: 100%;
+        }
+        button {
+            margin-top: 20px;
+            background-color: #ff7f7f;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        .button-container {
+            position: absolute;
+            top: 200px;
+            display: flex;
+            justify-content: center;
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+        #girlfriend {
+            position: absolute;
+            top: 50px;
+            text-align: center;
+            width: 100%;
+        }
+    </style>
+    <script>
+        function love() {
+            document.body.innerHTML = '<img src="13296.jpg" alt="Heart"><h1 id="girlfriend">You are my girlfriend</h1>';
+        }
+        function notLove() {
+            document.body.innerHTML = '<h1>You need to Love me</h1><div class="button-container"><button onclick="love()">Love</button></div>';
+        }
+    </script>
+</head>
+<body>
+    <div class="heart"></div>
+    <h1>Santa love kaojao</h1>
+    <div class="button-container">
+        <button onclick="love()">Love</button>
+        <button onclick="notLove()">Not Love</button>
+    </div>
+</body>
+</html>
